@@ -1,0 +1,227 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>SocioSense</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel=stylesheet type=text/css href="{{ url_for('static',filename='css/main.css') }}" />
+        <link rel=stylesheet type=text/css href="{{ url_for('static',filename='css/font-awesome.min.css') }}" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116313721-1"></script>
+	</head>
+        <style>
+/* Center the loader */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 10;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 }
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom {
+  from{ bottom:-100px; opacity:0 }
+  to{ bottom:0; opacity:1 }
+}
+#backdiv {
+	position:absolute;
+    background-color: rgba(93, 91, 86, 0.58);
+    width: 100%;
+    height:100%;
+}
+</style>
+    <script>
+      if (performance.navigation.type == 1) {
+        console.info( "This page is reloaded" );
+      } else {
+        console.info( "This page is not reloaded");
+      }
+    </script>
+	<body onload="sendAnalytics();">
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="#banner" class="logo">A <strong>Vasu Gupta</strong> Project</a>
+					<nav id="nav">
+						<a href="">Home</a>
+						<a href="#about">About</a>
+						<a href="#footer">Contact</a>
+					</nav>
+					<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+				</div>
+			</header>
+
+		<!-- Banner -->
+			<section id="banner" style="background-image:url({{ url_for('static',filename='img/banner.jpg') }})">
+				<div class="inner">
+					<header>
+						<h1>Welcome to SocioSense</h1><div id="loader" style="display: none;"></div>
+					</header>
+
+					<div class="flex ">
+					
+					<div>
+							<span class="icon fa-android"></span>
+							<h3>Android App</h3>
+							<p>Standalone Application for detailed Analysis</p>
+                        <a href="https://play.google.com/store/apps/details?id=com.androfly.vasupc.androidapp" target="_blank">Download</a>
+						</div>
+					
+						<div>
+							<span class="icon fa-chrome"></span>
+							<h3>Web</h3>
+							<p>You are right here!!</p>
+						</div>
+
+						<div>
+							<span class="icon fa-desktop"></span>
+							<h3>Windows</h3>
+							<p>Desktop App for convenient Analysis</p>
+                            <a href="https://drive.google.com/open?id=1Pj0hRkbOrQaWXp_aPjnsSVtKImzNXTCh" target="_blank">Download</a>
+						</div>
+
+					</div>
+
+					<footer>
+						<form method="get" action="main" onsubmit="disableElements();">
+						<div style="margin-right:30% ; margin-left:30%;">
+							<div class="row uniform" >
+								<div class="9u 12u$(small)">
+									<input type="text" name="query" id="query" value="" placeholder="Start With a HashTag..." required/>
+								</div>
+								<div class="3u$ 12u$(small)">
+									<input type="submit" id="start_btn" value="Search" class="fit" />
+								</div>
+							</div>
+						</div>
+						</form>
+					</footer>
+				</div>
+			</section>
+
+
+		<!-- Three -->
+			<section id="about" class="wrapper align-center" style="margin-top:-5%;">
+				<div class="inner">
+					<header>
+						<h2>About</h2>
+						<p>About The Project</p>
+					</header>
+					
+					<p style="text-align:left;"><span class="image left"><img src="{{ url_for('static',filename='img/pic01.jpg') }}" alt="" /></span>In the past few years, there has been a huge growth in the use of microblogging platforms such as Twitter. Spurred by that growth, companies and media organizations are increasingly seeking ways to mine Twitter for information about what products and services. Sentiment analysis is extremely useful in social media monitoring as it allows us to gain an overview of the wider public opinion behind certain topics.These Social media monitoring tools make that process quicker and easier than ever before, thanks to real-time monitoring capabilities.The applications of sentiment analysis are broad and powerful. The ability to extract insights from social data is a practice that is being widely adopted by organisations across the world.<br>Our Motive is to Make the best of your decisions by comparing the society's outlook on the world around you today!SocioSense is the Social Opinion of the society today. Learn what people think of products, politicians, restaurants, localities and more.. The possibilities are endless!<br>No matter what the domain, we always require compare and contrast in order to make an informed decision. SocioSense leverages the power of society to provide a concise statistical overview of the items being compared. Even better, you can use SocioSense to<br><strong>Track the popularity of a trend!</strong><br>A restaurant? You want the best food with minimal cost. A locality? You want a posh area devoid of certain issues.<br><strong>Placate the implacable!</strong><br>Target the people who have shown a negative disposition on your product and potentially change them into positive reviews.<br><strong>Find and compare similar people/softwares from the same domain!</strong><br>SocioSense provides CONCLUSIVE result where the user can analyze the society's opinion in ONE go. It is not easy to analyze thousands of reviews when one gets overwhelmed by the large amount of opinions guiding him into different directions only to produce even more ambiguity in his mind. That Changes Today.</p>
+					
+					<header>
+						<p>About The Developer</p>
+						<p>Dedicated To Code! Nothing Else!!</p>
+					</header>
+					<ul class="icons" style="text-align:center;margin-bottom:-5%;margin-top:-3%;">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+						<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
+						<li><a href="#" class="icon fa-tumblr"><span class="label">Tumblr</span></a></li>
+					</ul>
+					
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+
+					<h3>Get in touch</h3>
+
+					<form action="feedback" id="feedback_form" method="post">
+
+						<div class="field half first">
+							<label for="name">Name</label>
+							<input name="name" id="name" type="text" placeholder="Name" required>
+						</div>
+						<div class="field half">
+							<label for="email">Email</label>
+							<input name="email" id="email" type="email" placeholder="Email" required>
+						</div>
+						<div class="field">
+							<label for="message">Message</label>
+							<textarea name="message" id="message" rows="6" placeholder="Message" required></textarea>
+						</div>
+						<ul class="actions">
+							<li><input value="Send Message" class="button alt" type="submit" style="width:120%;"></li>
+						</ul>
+					</form>
+
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
+			<script src="{{ url_for('static',filename='js/skel.min.js') }}"></script>
+			<script src="{{ url_for('static',filename='js/util.js') }}"></script>
+			<script src="{{ url_for('static',filename='js/main.js') }}"></script>
+
+
+        <script>
+        function disableElements() {
+            document.getElementById("start_btn").disabled = true;
+            showLoading();
+        }
+        function showLoading() {
+            document.getElementById("loader").style.display = "block";
+        }
+        function resetForm() {
+            var name = document.getElementById("name").innerHTML = '';
+        }
+    </script>
+
+
+    <script>
+        function sendAnalytics() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', "{{ analytics_id }}");
+          //console.log('Analytics Send!');
+        }
+
+    </script>
+
+
+	</body>
+
+
+
+</html>

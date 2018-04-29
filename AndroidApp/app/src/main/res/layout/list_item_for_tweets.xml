@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10sp"
+        android:layout_marginBottom="10sp"
+        android:layout_marginLeft="5sp"
+        android:layout_marginRight="5sp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="5sp">
+
+        <TextView
+            android:id="@+id/tv_handle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="vksd vkjds vj;ds"
+            android:layout_marginLeft="10sp"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorAccent"
+            android:gravity="center_vertical"/>
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="vksd vkjds vj;ds"
+            android:layout_marginLeft="5sp"
+            android:layout_marginRight="10sp"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:gravity="center_vertical"/>
+
+    </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_tweet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="4"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            tools:text="vksd vkjds vj;ds" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>
